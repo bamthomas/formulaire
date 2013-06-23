@@ -1,17 +1,14 @@
 $(document).ready(function() {
 
-    $('#form-navbar').click(function() {
+    $('ul.nav li').click(function() {
+        var nav_id = $(this).attr('id');
+        var content_id = nav_id.replace('-navbar', '');
+    
         $('.content').addClass('hidden');
-        $('#form').removeClass('hidden');
+        $('#' + content_id).removeClass('hidden');
         $('ul.nav li').removeClass('active');
-        $('#form-navbar').addClass('active');
+        $(this).addClass('active');
     });
 
-    $('#about-navbar').click(function() {
-        $('.content').addClass('hidden');
-        $('#about').removeClass('hidden');
-        $('ul.nav li').removeClass('active');
-        $('#about-navbar').addClass('active');
-    });
 });
 

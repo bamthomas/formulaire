@@ -10,6 +10,7 @@ $(document).ready(function() {
     var formViewModel = new FormViewModel();
 
     if (Modernizr.localstorage) {
+        $('#save').removeClass('hidden');
         for (var prop in formViewModel) {
             formViewModel[prop] = localStorage['formulaire.' + prop];
         }
@@ -26,6 +27,11 @@ $(document).ready(function() {
         $('#' + content_id).removeClass('hidden');
         $('ul.nav li').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $('#export').click(function() {
+        uriContent = "data:application/json," + encodeURIComponent(JSON.stringify(formViewModel));
+        window.open(uriContent, 'save');
     });
 
     $('#save').click(function() {

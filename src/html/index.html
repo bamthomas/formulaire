@@ -56,9 +56,9 @@
 
         <legend>Personnes à prévenir</legend>
         <label>Nom prénom</label>
-        <input type="text" placeholder="Nom et prénom de la personne"/>
+        <input type="text" data-bind="value: prevenir_nom_prenom" placeholder="Nom et prénom de la personne"/>
         <label>Téléphone</label>
-        <input type="text" placeholder="numéro de téléphone"/>
+        <input type="tel" data-bind="value: prevenir_telephone" placeholder="numéro de téléphone"/>
         <p>
             <button id="save" type="submit" class="btn">Enregistrer</button>
         </p>

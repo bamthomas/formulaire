@@ -3,15 +3,19 @@ $(document).ready(function() {
     function FormViewModel() {
         this.prenom = null;
         this.nom = null;
+        this.prevenir_nom_prenom = null;
+        this.prevenir_telephone = null;
     }
 
     var formViewModel = new FormViewModel();
 
-    if (!Modernizr.localstorage) {
+    if (Modernizr.localstorage) {
+        for (var prop in formViewModel) {
+            formViewModel[prop] = localStorage.getItem(prop);
+        }
+    } else {
         var warningHtml = '<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Attention!</strong><p>Votre navigateur ne supporte pas l\'enregistrement de données. Cf <a href="http://caniuse.com/namevalue-storage">http://caniuse.com/namevalue-storage</a>. Les données que vous allez saisir ne pourront pas être sauvegardées.</p></div>';
         $('#form').prepend(warningHtml);
-    } else {
-        formViewModel.nom = localStorage.getItem('nom');
     }
 
     $('ul.nav li').click(function() {
@@ -25,7 +29,9 @@ $(document).ready(function() {
     });
 
     $('#save').click(function() {
-        localStorage.setItem('nom',formViewModel.nom);
+        for(var prop in formViewModel) {
+            localStorage.setItem(prop,formViewModel[prop]);
+        }
     });
 
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="fr">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>Formulaire pour la rentrée</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,50 +11,75 @@
     <!-- Le styles -->
     <link href="../css/bootstrap.css" rel="stylesheet">
     <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
     </style>
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="../js/html5shiv.js"></script>
+    <script src="../js/html5shiv.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li id="form-navbar" class="active"><a href="#">formulaire</a></li>
-              <li id="about-navbar" ><a href="#about">A propos</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li id="form-navbar" class="active"><a href="#">Formulaire</a></li>
+                    <li id="viewform-navbar"><a href="#">Imprimer</a></li>
+                    <li id="about-navbar"><a href="#about">A propos</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-      </div>
     </div>
+</div>
 
-    <div id="form" class="container content">
-        le formulaire
-    </div>
+<div id="form" class="container content">
+    <!--cf http://twitter.github.io/bootstrap/base-css.html#forms -->
+    <fieldset>
+        <legend>Le tuteur</legend>
+        <label>Nom</label>
+        <input type="text" data-bind="value: nom" placeholder="Votre nom"/>
+        <label>Prénoms</label>
+        <input type="text" data-bind="value: prenom" placeholder="Vos prénoms"/>
 
-    <div id="about" class="container content hidden">
-        C'est un formulaire pour éviter de resaisir toutes les informations chaque rentrée
-    </div>
+        <legend>Personnes à prévenir</legend>
+        <label>Nom prénom</label>
+        <input type="text" placeholder="Nom et prénom de la personne"/>
+        <label>Téléphone</label>
+        <input type="text" placeholder="numéro de téléphone"/>
+        <p>
+            <button id="save" type="submit" class="btn">Enregistrer</button>
+        </p>
+    </fieldset>
+</div>
 
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../js/jquery-1.10.1.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/formulaire.js"></script>
+<div id="viewform" class="container content hidden">
+    visualisation pour impression
+</div>
+
+<div id="about" class="container content hidden">
+    C'est un formulaire pour éviter de resaisir toutes les informations chaque rentrée
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.1.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/modernizr.js"></script>
+<script src="../js/knockout-2.2.1.js"></script>
+<script src="../js/formulaire.js"></script>
 
 
-</body></html>
+</body>
+</html>

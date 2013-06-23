@@ -46,6 +46,10 @@
 </div>
 
 <div id="form" class="container content">
+    <div id="import" class="hidden">
+        Importer : <input type="file" id="file" name="files[]"  />
+    </div>
+
     <!--cf http://twitter.github.io/bootstrap/base-css.html#forms -->
     <fieldset>
         <legend>Le tuteur</legend>
@@ -59,6 +63,7 @@
         <input type="text" data-bind="value: prevenir_nom_prenom" placeholder="Nom et prénom de la personne"/>
         <label>Téléphone</label>
         <input type="tel" data-bind="value: prevenir_telephone" placeholder="numéro de téléphone"/>
+
         <p>
             <button id="save" type="submit" class="btn hidden">Enregistrer</button>
             <button id="export" type="submit" class="btn">Exporter</button>

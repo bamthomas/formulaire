@@ -19,13 +19,15 @@ $(document).ready(function () {
             formViewModel[prop] = localStorage['formulaire.' + prop];
         }
     } else {
-        warning('Votre navigateur ne supporte pas l\'enregistrement de données. Cf <a href="http://caniuse.com/namevalue-storage">http://caniuse.com/namevalue-storage</a>. Les données que vous allez saisir ne pourront pas être sauvegardées.');
+        warning('Votre navigateur ne supporte pas l\'enregistrement de données. Cf <a href="http://caniuse.com/namevalue-storage">http://caniuse.com/namevalue-storage</a>. ' +
+            'Les données que vous allez saisir ne pourront pas être sauvegardées.');
     }
 
     if (typeof(FileReader) === 'function' && Modernizr.draganddrop) {
         $('#import').removeClass('hidden');
     } else {
-        warning('Votre navigateur ne supporte pas le glisser-déposer de fichier local. Cf <a href="http://caniuse.com/#feat=filereader">http://caniuse.com/#feat=filereader</a>. Vous ne pourrez pas importer de formulaire préalablement exporté.');
+        warning('Votre navigateur ne supporte pas le glisser-déposer de fichier local. Cf <a href="http://caniuse.com/#feat=filereader">http://caniuse.com/#feat=filereader</a>. ' +
+            'Vous ne pourrez pas importer de formulaire préalablement exporté.');
     }
 
     $('#file').on('change', function (evt) {
